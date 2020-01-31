@@ -1,0 +1,168 @@
+git init -> intialize a repo
+
+==============================================================
+git clone -> dowload a repo
+
+==============================================================
+git status -> show status of files 
+
+
+==============================================================
+git log -> show commits history (SHA - author - Date - commit msg)
+
+
+==============================================================
+git log --oneline -> to show abbreviation of a commit
+
+
+==============================================================
+git log --stat -> show commits history + updates in files
+
+
+==============================================================
+git log -p to show difference between two files 
+(+) for added lines(new file) 
+(-) for deleted lines(old file) 
+(you can see also where changes start and how many lines in this file now)
+
+==============================================================
+to ignore white space we use -w
+
+
+==============================================================
+git show "write SHA without quotes" will show the current commit and we can combine it with --stat to show the modifications on file if we use --stat we must use -p again
+it will show
+the commit
+the author
+the date
+the commit message
+the patch information
+
+==============================================================
+git log -p "write sha here without quotes" it will show it 
+
+==============================================================
+to know changes in files that have been made without commiting it till now 
+we use
+git diff
+
+==============================================================
+git add to add files to staging area
+git add . to add all files
+
+==============================================================
+git commit -m "write msg here"
+
+==============================================================
+.gitignore to ignore files
+# - marks line as a comment
+* - matches 0 or more characters
+? - matches 1 character
+[abc] - matches a, b, _or_ c
+** - matches nested directories - a/**/z matches
+a/z
+a/b/z
+a/b/c/z
+
+
+
+==============================================================
+git tag -a v1.0 (SHA)
+(SHA) is optional if you did not write it, it will make tag for the latest sha by default.
+to add tag to our current project 
+to show all tags write (git tag) only
+
+==============================================================
+git tag -d (tag name) => to delete a tag
+
+==============================================================
+to add branch 
+git branch branch name (SHA) 
+(SHA) is optional and will add the branch to spacific SHA
+
+==============================================================
+to change the branch to the another branch
+git checkout branch name 
+
+==============================================================
+to know your branches and your current branch write 
+git branch
+
+==============================================================
+to delete branch you must first switch from this branch to another branch 
+then 
+
+git branch -d branch name
+
+if you made some commits to this branch it will not accept the deletion
+to force deletion
+ 
+git branch -D branch name
+
+==============================================================
+git checkout -b footer master => it will create new branch called footer and start from master branch and will switch to it 
+
+==============================================================
+
+to merge two branches 
+fast forward merge will move current branch to last commit of the other branch
+
+if they are two different branches after merging there will be a commit message 
+git merge (the name of the branch you want to merge it in your current branch)
+==============================================================
+<<<<<<<<<<<< head 
+it will write all lines of first branch
+
+||||||||||||
+it will write all original lines
+
+============
+it will write all lines of the second branch
+
+>>>>>>>>>>> second branch
+
+==============================================================
+to modify your last commit 
+git commit --amend
+
+==============================================================
+git revert <SHA-of-commit-to-revert>
+
+==============================================================
+if you erase commit you can store it search git reflog
+
+==============================================================
+^ –> indicates the parent commit
+~ –> indicates the first parent commit
+^1 the first parent when merge it will be the branch you are on it 
+^2 the second parent branch the branch you merged it in
+
+==============================================================
+remove uncommit changes using 
+git checkout -- index.html
+
+==============================================================
+git reset --mixed <sha> 
+will back the current changes to working directory'
+
+erase commits with the --hard
+return commits to staging area using --soft flag
+return changes to working directory using --mixed and it is by default 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
